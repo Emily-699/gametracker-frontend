@@ -1,0 +1,281 @@
+/* ============================================
+   MODO CLARO - Fondo lila sólido por defecto
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 100vh !important;
+  height: 100%;
+  background: #b8a9d4 !important;
+  transition: background 0.5s ease;
+}
+
+/* ============================================
+   FONDO COMPLETO MODO CLARO (color lila)
+   ============================================ */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #b8a9d4;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Asegurar que #root y .App no bloqueen el fondo */
+#root,
+.App {
+  background: transparent !important;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Asegurar transparencia en contenedores del modo claro */
+.biblioteca-container,
+.biblioteca-juegos,
+.contenedor-principal,
+main,
+.grilla-juegos,
+.seccion-juegos,
+.lista-juegos {
+  background: transparent !important;
+}
+
+/* ============================================
+   BOTÓN TOGGLE MODO OSCURO
+   ============================================ */
+.toggle-modo-oscuro {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid #e2e8f0;
+  background: white;
+  box-shadow: 0 4px 12px rgba(37, 36, 36, 0.838);
+  color: #667eea;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-modo-oscuro:hover {
+  transform: scale(1.05) rotate(15deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #667eea;
+}
+
+.toggle-modo-oscuro:active {
+  transform: scale(0.95);
+}
+
+/* ============================================
+   MODO OSCURO - Gradiente completo
+   ============================================ */
+body.modo-oscuro {
+  background: linear-gradient(135deg, #433878 0%, #5821ab 50%, #9f7cff 100%) !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+  color: #f5f3ff !important;
+  min-height: 100vh !important;
+  height: auto !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+  transition: background 0.8s ease, color 0.8s ease;
+  position: relative;
+}
+
+/* Añadir pseudo-elemento para forzar el fondo en toda la página */
+body.modo-oscuro::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #433878 0%, #5821ab 50%, #9f7cff 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+body.modo-oscuro #root {
+  background: transparent !important;
+  color: inherit !important;
+  min-height: 100vh !important;
+  position: relative;
+}
+
+body.modo-oscuro .App {
+  background: transparent !important;
+  color: inherit !important;
+  min-height: 100vh !important;
+}
+
+/* Hacer transparente TODOS los contenedores principales */
+body.modo-oscuro .biblioteca-container,
+body.modo-oscuro .biblioteca-juegos,
+body.modo-oscuro .contenedor-principal,
+body.modo-oscuro main,
+body.modo-oscuro .grilla-juegos,
+body.modo-oscuro .seccion-juegos,
+body.modo-oscuro .lista-juegos {
+  background: transparent !important;
+}
+
+body.modo-oscuro .biblioteca-container {
+  color: #e0e0e0;
+  min-height: 100vh;
+}
+
+/* ============================================
+   ESTILOS DE COMPONENTES EN MODO OSCURO
+   ============================================ */
+body.modo-oscuro .biblioteca-header h1 {
+  color: white;
+  text-shadow: 0 0 30px rgba(102, 126, 234, 0.8);
+}
+
+body.modo-oscuro .input-busqueda,
+body.modo-oscuro .select-filtro {
+  background: rgba(30, 30, 50, 0.8);
+  border-color: rgba(102, 126, 234, 0.5);
+  color: #e0e0e0;
+}
+
+body.modo-oscuro .input-busqueda::placeholder {
+  color: #ece9e9;
+}
+
+body.modo-oscuro .filtros button {
+  background: rgba(30, 30, 50, 0.6);
+  color: #e0e0e0;
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+body.modo-oscuro .filtros button.activo {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: rgb(44, 41, 41);
+}
+
+body.modo-oscuro .tarjeta-juego {
+  background: rgba(125, 125, 223, 0.515);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+body.modo-oscuro .tarjeta-contenido h3 {
+  color: #e0e0e0;
+  background: linear-gradient(135deg, #667eea, #f093fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.modo-oscuro .tarjeta-info {
+  background: rgba(77, 97, 189, 0.507);
+  border-left-color: #667eea;
+}
+
+body.modo-oscuro .tarjeta-info p {
+  color: #fafaff;
+  font-weight: 500;
+  text-shadow: 0 0 4px rgba(101, 122, 215, 0.737);
+}
+
+body.modo-oscuro .tarjeta-descripcion {
+  color: #ffe5e5;
+}
+
+body.modo-oscuro .sin-juegos {
+  background: rgba(159, 159, 250, 0.8);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+body.modo-oscuro .sin-juegos p {
+  color: #e0e0e0;
+}
+
+/* Formularios y contenedores especiales */
+body.modo-oscuro .formulario-container,
+body.modo-oscuro .resenas-container,
+body.modo-oscuro .estadisticas-container,
+body.modo-oscuro .formulario-resena-container {
+  background: rgba(117, 117, 202, 0.95);
+  border-color: rgba(102, 126, 234, 0.4);
+}
+
+body.modo-oscuro .formulario-container h2,
+body.modo-oscuro .resenas-container h2,
+body.modo-oscuro .estadisticas-container h2,
+body.modo-oscuro .formulario-resena-container h2 {
+  color: #e0e0e0;
+}
+
+body.modo-oscuro .form-group label {
+  color: #b0b0b0;
+}
+
+body.modo-oscuro .form-group input,
+body.modo-oscuro .form-group select,
+body.modo-oscuro .form-group textarea {
+  background: rgba(65, 65, 111, 0.8);
+  border-color: rgba(102, 126, 234, 0.4);
+  color: #e0e0e0;
+}
+
+body.modo-oscuro .resena-card {
+  background: rgba(68, 68, 95, 0.8);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+body.modo-oscuro .resena-contenido p {
+  color: #d0d0d0;
+}
+
+body.modo-oscuro .stat-card {
+  background: rgba(40, 40, 60, 0.8);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+body.modo-oscuro .detail-section,
+body.modo-oscuro .chart-section {
+  background: rgba(40, 40, 60, 0.8);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+body.modo-oscuro .chart-label {
+  color: #d0d0d0;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .toggle-modo-oscuro {
+    width: 100px;
+    height: 100px;
+    font-size: 1.5rem;
+    top: 15px;
+    right: 15px;
+  }
+}

@@ -1,0 +1,188 @@
+.formulario-reseña-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.formulario-reseña-container {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.formulario-reseña-container h2 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 1.8rem;
+}
+
+.juego-nombre {
+  color: #666;
+  margin: 0 0 25px 0;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.selector-estrellas {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.estrella {
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  filter: grayscale(100%);
+}
+
+.estrella.activa {
+  filter: grayscale(0%);
+}
+
+.estrella:hover {
+  transform: scale(1.2);
+}
+
+.puntuacion-texto {
+  margin: 10px 0 0 0;
+  color: #666;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.formulario-reseña-container .form-group {
+  margin-bottom: 20px;
+}
+
+.formulario-reseña-container .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.formulario-reseña-container .form-group input,
+.formulario-reseña-container .form-group select,
+.formulario-reseña-container .form-group textarea { 
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.formulario-reseña-container .form-group input:focus,
+.formulario-reseña-container .form-group select:focus,
+.formulario-reseña-container .form-group textarea:focus {
+  outline: none;
+  border-color: #2196f3;
+}
+
+.formulario-reseña-container .form-group textarea {
+  resize: vertical;
+}
+
+.formulario-reseña-container .form-group small {
+  display: block;
+  margin-top: 5px;
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.formulario-reseña-container .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.formulario-reseña-container .checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.formulario-reseña-container .checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.formulario-reseña-container .checkbox-group input[type="checkbox"] {
+  width: auto;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.formulario-reseña-container .form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.formulario-reseña-container .form-actions button {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.formulario-reseña-container .btn-cancelar {
+  background: #e0e0e0;
+  color: #555;
+}
+
+.formulario-reseña-container .btn-cancelar:hover {
+  background: #d0d0d0;
+}
+
+.formulario-reseña-container .btn-guardar {
+  background: #2196f3;
+  color: white;
+}
+
+.formulario-reseña-container .btn-guardar:hover {
+  background: #1976d2;
+}
+
+@media (max-width: 600px) {
+  .formulario-reseña-container .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .formulario-reseña-container {
+    padding: 20px;
+  }
+  
+  .selector-estrellas {
+    gap: 5px;
+  }
+  
+  .estrella {
+    font-size: 2rem;
+  }
+}
