@@ -122,6 +122,45 @@
   background: #45a049;
 }
 
+.imagen-url-tip {
+  color: #555050ff;
+  font-size: 0.85em;
+}
+
+.imagen-preview-container {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.imagen-preview-text {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.imagen-preview {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.imagen-preview:hover {
+  transform: scale(1.02);
+}
+
+.imagen-error {
+  padding: 20px;
+  background-color: #fff3cd;
+  border-radius: 8px;
+}
+
+.imagen-error p {
+  color: #856404;
+  font-weight: 500;
+}
+
+
 @media (max-width: 600px) {
   .form-row {
     grid-template-columns: 1fr;

@@ -148,32 +148,24 @@ function FormularioJuego({ juegoEditar, onGuardar, onCancelar }) {
               onChange={handleChange}
               placeholder="https://ejemplo.com/portada-juego.jpg"
             />
-            <small style={{ color: '#555050ff', fontSize: '0.85em' }}>
+            <small className="imagen-url-tip">
               💡 Pega aquí la URL de una imagen
             </small>
 
-            {/* VISTA PREVIA */}
             {imagenPreview && (
-              <div style={{ marginTop: '15px', textAlign: 'center' }}>
-                <p style={{ fontSize: '0.9em', color: '#555' }}>Vista previa:</p>
+              <div className="imagen-preview-container">
+                <p className="imagen-preview-text">Vista previa:</p>
                 {!imagenError ? (
                   <img
                     src={imagenPreview}
                     alt="Preview"
                     onError={handleImagenError}
                     onLoad={handleImagenLoad}
-                    style={{
-                      maxWidth: '100%',
-                      maxHeight: '300px',
-                      borderRadius: '8px',
-                      border: '2px solid #ddd'
-                    }}
+                    className="imagen-preview"
                   />
                 ) : (
-                  <div style={{ padding: '20px', backgroundColor: '#fff3cd', borderRadius: '8px' }}>
-                    <p style={{ color: '#856404' }}>
-                      ⚠️ No se pudo cargar la imagen. Verifica que la URL sea correcta.
-                    </p>
+                  <div className="imagen-error">
+                    <p>⚠️ No se pudo cargar la imagen. Verifica que la URL sea correcta.</p>
                   </div>
                 )}
               </div>
