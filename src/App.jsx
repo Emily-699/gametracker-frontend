@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import BibliotecaJuegos from './Componentes/BibliotecaJuegos';
+import BibliotecaJuegos from './componentes/BibliotecaJuegos';
 import ModoOscuro from './componentes/ModoOscuro';
 import './App.css';
 
