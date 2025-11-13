@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Emily-699.github.io/gametracker-frontend",
+  "homepage": "http://localhost:5173",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
